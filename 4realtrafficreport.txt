@@ -14,7 +14,9 @@ Methodology:    Orient > Question > Filter > Follow > Compare > Document
 
 Source:          Wireshark sample capture "tfp_capture.pcapng"
 Total packets:   1648
-Headline:        a USB-connected device is enumerated through a hub, then the host performs local network discovery via mDNS/DNS, and finally communicates with a Tinkerforge device using TFP
+Headline:        a USB-connected device is enumerated through a
+hub, then the host performs local network discovery via mDNS/DNS,
+and finally communicates with a Tinkerforge device using TFP
 
 
 ------------------------------------------------------------
@@ -28,7 +30,8 @@ Busiest conversation (from Conversations, sorted by bytes):
   - 127.0.0.1 to 127.0.0.1 (594 packets/43kB)
 
 Notable endpoints (from Endpoints):
-  - most of the packets were shared by the device with itself. Since 127.0.0.1 is the loopback address.
+  - most of the packets were shared by the device with itself.
+Since 127.0.0.1 is the loopback address.
 
 
 ------------------------------------------------------------
@@ -42,7 +45,8 @@ Filters used:
   tfp 
 
 What I found following the thread:
-	The capture shows loopback communication, so the software is talking to a local service on the same machine rather than a remote host
+	The capture shows loopback communication, so the software is 
+talking to a local service on the same machine rather than a remote host
 
 ------------------------------------------------------------
  4. COMPARISON TO BASELINE
@@ -60,16 +64,25 @@ patterns (port scan / suspicious DNS / beacon / plaintext):
   [ ] Other / unexplained
 
 Evidence for the box(es) checked:
- Filter tfp showed traffic in a loopback interface which never leaves the host and majority of the packets were sent using this interface meaning that traffic never leaves the host.
+ Filter tfp showed traffic in a loopback interface which never 
+leaves the host and majority of the packets were sent using 
+this interface meaning that traffic never leaves the host.
 
 ------------------------------------------------------------
  5. VERDICT AND CONFIDENCE
 ------------------------------------------------------------
 
-Verdict:     USB / USBHUB usually indicates the host is enumerating a newly attached USB device through a hub, reading descriptors, assigning an address, and establishing endpoints before higher-level communication starts.
+Verdict:     USB / USBHUB usually indicates the host is enumerating
+a newly attached USB device through a hub, reading descriptors,
+assigning an address, and establishing endpoints before higher-level
+communication starts.
+
 Confidence:  PROBABLE
 
-Reasoning:   The most likely story is that a computer connects to a USB device, the device enumerates through the hub, then the software discovers or resolves a companion service on the local network using mDNS/DNS, and finally opens a TFP session to control the hardware.
+Reasoning:   The most likely story is that a computer connects to a 
+USB device, the device enumerates through the hub, then the software 
+discovers or resolves a companion service on the local network using
+mDNS/DNS, and finally opens a TFP session to control the hardware.
 
 
 ------------------------------------------------------------
@@ -77,11 +90,11 @@ Reasoning:   The most likely story is that a computer connects to a USB device, 
 ------------------------------------------------------------
 
 If this were a real engagement:
-  [ ] [e.g. Capture additional traffic from the same host to
+  [ ] Capture additional traffic from the same host to
           confirm the beacon interval]
-  [ ] [e.g. Check the suspicious external IP against threat
+  [ ] Check the suspicious external IP against threat
           intelligence (AbuseIPDB, etc)]
-  [ ] [e.g. No further action — traffic is benign]
+  [ ] No further action — traffic is benign]
 
 
 ============================================================
