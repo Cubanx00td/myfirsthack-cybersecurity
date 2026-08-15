@@ -59,7 +59,8 @@ Verdict:     SUSPICIOUS
 Confidence:  HIGH
 
 Evidence-based reasoning:
-malicious because it contains a script to download a payload, creation of new user account, clearing the authentication logs.
+malicious because it contains a script to download a payload, 
+creation of new user account, clearing the authentication logs.
 
 
 ------------------------------------------------------------
@@ -70,7 +71,8 @@ Do NOT execute the file under any circumstances
 Preserve as evidence (remove execute permission, keep the file)
 for further analysis
 Escalate to incident response
-Check the system for signs such as it already created a hidden_admin account, a cleared auth log
+Check the system for signs such as it already created a 
+hidden_admin account, a cleared auth log
 
 
 ============================================================
