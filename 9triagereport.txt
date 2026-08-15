@@ -13,7 +13,8 @@ Method:    Risk-based prioritisation (severity weighed by
  1. SUMMARY
 ------------------------------------------------------------
 
-Seven findings triaged by real risk. Top priority is the actively-exploited, internet-facing web vulnerability. The main focus is
+Seven findings triaged by real risk. Top priority is the actively
+-exploited, internet-facing web vulnerability. The main focus is
 to consider other factors than CVSS rating to get actual risk 
 posed by different vulnerabilities.
 
@@ -29,8 +30,8 @@ posed by different vulnerabilities.
   3 | CRITICAL | L         | not exposed, not patchable, not exploited
   4 | MEDIUM   | L         | not exposed, patchable, no exploit
   5 | HIGH     | M         | not publicly exposed, patchable, no exploit
-  6 | CRITICAL | H         | not exposed, patch Unavailable, not exploited, controls possible
-
+  6 | CRITICAL | H         | not exposed, patch Unavailable, 
+                             not exploited, controls possible
   7 | LOW      | H         | publicly exposed, patchable, no exploit
  
  
