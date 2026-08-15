@@ -20,7 +20,9 @@ established backdoor that facilitated the data theft.
 ------------------------------------------------------------
 
 RECONNAISSANCE:
-  attacker studied the company's website, found employees on professional networks and researched about employees in finance department
+  attacker studied the company's website, found employees on
+professional networks and researched about employees in finance
+department
 
 WEAPONIZATION:
   prepared an email with a malicious attachment disguised as invoice
@@ -36,7 +38,9 @@ INSTALLATION:
   attacker installed a backdoor and created a hidden scheduled task 
 
 COMMAND AND CONTROL:
-  the machine connected to attacker controlled server and executed commands remotely. gained access to credentials and found customer database.
+the machine connected to attacker controlled server and executed
+commands remotely. gained access to credentials and found customer
+database.
 
 ACTIONS ON OBJECTIVES:
  attacker copied entire database and put for sale
@@ -46,22 +50,27 @@ ACTIONS ON OBJECTIVES:
 ------------------------------------------------------------
 
   Stage: Reconnaissance  ->  Technique: Phishing
-                Tactic: Initial access
+        Tactic: Initial access
 
   Stage: Weaponisation  ->  Technique: Generate Content
 		Tactic: Resource Development
 
-  Stage: Command and Control  ->  Technique: Internal Spearphishing Tactic: Lateral Movement
+  Stage: Command and Control  ->  Technique: Internal Spearphishing
+		Tactic: Lateral Movement
 
 
 ------------------------------------------------------------
  4. WHERE THE CHAIN COULD HAVE BROKEN
 ------------------------------------------------------------
 
-  Stage: Delivery  ->  Defence: scanning for suspicious files in email
-  Stage: Exploitation  ->  Defence: inspecting the file before opening 
-  Stage: Installation  ->  Defence: restricted powers for users to create and modify scheduled tasks
-  Stage: Command and Control  ->  Defence: Isolation of customer database from other devices
+  Stage: Delivery  ->  Defence: scanning for suspicious files
+in email
+  Stage: Exploitation  ->  Defence: inspecting the file before
+opening 
+  Stage: Installation  ->  Defence: restricted powers for users
+to create and modify scheduled tasks
+  Stage: Command and Control  ->  Defence: Isolation of customer
+database from other devices
 
   MOST EFFECTIVE DEFENCE:
   Least privilege to prevent unneeded access to resources 
@@ -80,7 +89,8 @@ ACTIONS ON OBJECTIVES:
  6. KEY TAKEAWAY
 ------------------------------------------------------------
 
-  The attacker had to succeed at every stage; the defenders only needed to win once. At each stage, a strong implementation of 
+  The attacker had to succeed at every stage; the defenders 
+only needed to win once. At each stage, a strong implementation of 
 security measures like filtering and least privilege help in 
 prevention of majority of attacks.
 
