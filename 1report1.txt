@@ -1,0 +1,71 @@
+============================================================
+ PERSONAL SECURITY AUDIT REPORT
+============================================================
+
+Auditor:       Rubanpreet Singh
+Audit Date:    May 13, 2025
+Engagement:    Personal Digital Security Assessment
+Methodology:   Scope > Intelligence > Exposure > Severity > Remediation
+
+
+------------------------------------------------------------
+ 1. SCOPE
+------------------------------------------------------------
+
+Systems and accounts assessed:
+  - Primary email:   email
+  - Key accounts:    Google, Apple ID, LinkedIn
+  - Primary device:  iPhone
+  - Network:         home Wi-Fi
+
+
+------------------------------------------------------------
+ 2. EXECUTIVE SUMMARY
+------------------------------------------------------------
+
+Assessment identified 1 critical and 2 moderate findings across personal accounts. Primary risk is weak passwords across high-value accounts paired with limited MFA coverage. One remediation action completed during audit; 2 items tracked for follow-up.
+
+
+------------------------------------------------------------
+ 3. FINDINGS
+------------------------------------------------------------
+
+CRITICAL
+Primary email (Gmail) has no 2FA enabled
+ 
+HIGH
+Unrecognised Chrome session active on Google account from an IP last used 11 months ago
+
+MEDIUM
+7 third-party apps have access to Google account; 9 not used in over 12 months
+Primary email publicly tied to inactive Skype account found via OSINT tools
+
+LOW
+Forgotten Facebook account from 2015 still active under previous email
+
+
+------------------------------------------------------------
+ 4. ACTIONS TAKEN DURING AUDIT
+------------------------------------------------------------
+
+Enabled authenticator-app 2FA on primary email
+Logged out of 2 unrecognised sessions on Google
+Revoked access for 9 unused third-party apps
+
+
+------------------------------------------------------------
+ 5. REMEDIATION PLAN
+------------------------------------------------------------
+
+This week:
+Enable 2FA on remaining 4 key accounts
+Add recovery information 
+
+This month:
+Set up Authenticator app to enforce 2FA
+Delete forgotten Facebook account from 2015
+
+
+============================================================
+ END OF REPORT
+============================================================
