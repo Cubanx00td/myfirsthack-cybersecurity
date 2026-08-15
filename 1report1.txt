@@ -23,7 +23,10 @@ Systems and accounts assessed:
  2. EXECUTIVE SUMMARY
 ------------------------------------------------------------
 
-Assessment identified 1 critical and 2 moderate findings across personal accounts. Primary risk is weak passwords across high-value accounts paired with limited MFA coverage. One remediation action completed during audit; 2 items tracked for follow-up.
+Assessment identified 1 critical and 2 moderate findings across 
+personal accounts. Primary risk is weak passwords across high-value 
+accounts paired with limited MFA coverage. One remediation action 
+completed during audit; 2 items tracked for follow-up.
 
 
 ------------------------------------------------------------
