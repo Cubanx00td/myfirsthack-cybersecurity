@@ -1,0 +1,78 @@
+ SUSPICIOUS FILE ANALYSIS
+============================================================
+
+Analyst:        Rubanpreet Singh
+Analysis Date:  14-07-26
+File examined:  suspicious.sh
+Method:         Static examination only (file never executed)
+
+
+------------------------------------------------------------
+ 1. SUMMARY
+------------------------------------------------------------
+
+The file is a bash script that, if run, would download and 
+execute a payload from a remote address, create a hidden 
+user account, and clear the authentication log. 
+Verdict: malicious, high confidence.
+
+
+------------------------------------------------------------
+ 2. FILE IDENTIFICATION
+------------------------------------------------------------
+
+Reported type (file command):  Bourne-Again shell script,
+                                 ASCII text
+Name vs actual type:        : same
+
+
+------------------------------------------------------------
+ 3. FILE PROPERTIES (ls -l)
+------------------------------------------------------------
+
+Permissions:    -rw-r--r--
+Executable?:    no
+Owner:          kali
+Size:           180 bytes
+Modified:       19:54:23 Mon 14 July 2026
+
+
+------------------------------------------------------------
+ 4. CONTENTS AND RED FLAGS
+------------------------------------------------------------
+
+Examined by reading (cat / less), never by running.
+
+Red flags found:
+Downloads a file from a remote web address
+(wget http://...) — fetch-a-payload pattern
+Runs the downloaded file (bash payload.sh) — executes untrusted code
+Creates a user account (useradd hidden_admin) — attacker persistence
+Clears the authentication log — covering tracks
+
+
+------------------------------------------------------------
+ 5. VERDICT AND CONFIDENCE
+------------------------------------------------------------
+
+Verdict:     SUSPICIOUS
+Confidence:  HIGH
+
+Evidence-based reasoning:
+malicious because it contains a script to download a payload, creation of new user account, clearing the authentication logs.
+
+
+------------------------------------------------------------
+ 6. RECOMMENDATION
+------------------------------------------------------------
+
+Do NOT execute the file under any circumstances
+Preserve as evidence (remove execute permission, keep the file)
+for further analysis
+Escalate to incident response
+Check the system for signs such as it already created a hidden_admin account, a cleared auth log
+
+
+============================================================
+ END OF ANALYSIS
+============================================================

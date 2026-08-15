@@ -1,0 +1,102 @@
+============================================================
+ LINUX FORENSICS INVESTIGATION
+============================================================
+
+Investigator:    Rubanpreet Singh
+Date:            July 23, 2026
+System examined: Kali linux virtual machine
+Scenario:        Suspected compromise (staged practice scenario)
+Method:          Live + historical examination; suspicious files
+                 examined without execution
+
+
+------------------------------------------------------------
+ 1. SUMMARY
+------------------------------------------------------------
+
+Evidence indicates compromise at July 22 05:13:20
+via remote ssh login. The actor dropped a file in /tmp, created
+persistence. Confidence: medium (staged scenario).
+
+
+------------------------------------------------------------
+ 2. INVESTIGATOR'S CHECKLIST FINDINGS
+------------------------------------------------------------
+
+PROCESSES (what's running that shouldn't be):
+nothing suspicious
+
+NETWORK CONNECTIONS (what it's talking to):
+nothing suspicious
+
+LOGS (the history / timeline):
+auth log findings: no new account creation, a new suspicious login using ssh
+
+ACCOUNTS (who exists / who can sudo):
+no suspicious accounts, only user's account can sudo
+
+SCHEDULED TASKS (persistence):
+a new cron job found that was recently created to run the update.sh file in /tmp folder establishing a remote connection 
+to a server in USA. 
+
+FILES (suspicious files):
+the file in /tmp: type: ASCII text
+properties: only read write permissions, no execute
+contents (examined, not run)
+recently-modified files found
+
+
+------------------------------------------------------------
+ 3. TIMELINE OF EVENTS
+------------------------------------------------------------
+
+  July 22 05:13:20 -  a new ssh remote login
+  July 22 05:15:29  -  update.sh created in /tmp directory
+  July 22 05:16:45  -  a cron job created to run update.sh 
+
+  A remote login followed by creation of file and a cron suggests
+compromise but it was not executed because the file is not executable.
+
+
+------------------------------------------------------------
+ 4. VERDICT AND CONFIDENCE
+------------------------------------------------------------
+
+Verdict:     NOT COMPROMISED
+Confidence:  HIGH
+
+Evidence-based reasoning:
+The login and creation of files indicate a compromise but it 
+was not executed because the file was not executable.
+
+
+------------------------------------------------------------
+ 5. HOW THE ATTACKER GOT IN AND STAYED
+------------------------------------------------------------
+
+Entry:        remote ssh login
+Actions:      creation of file, cron job
+Persistence:  cron
+
+------------------------------------------------------------
+ 6. RECOMMENDATIONS
+------------------------------------------------------------
+
+  Remove the dropped file and any persistence found
+  Find and remove ALL persistence (miss one, they return)
+  Apply hardening (Day 64) to prevent recurrence: updates, least privilege, SSH keys, monitoring
+  Preserve evidence; escalate per incident process
+
+
+------------------------------------------------------------
+ 7. SCOPE AND LIMITATIONS
+------------------------------------------------------------
+
+  this was a staged practice scenario. In a real investigation,
+I would examine the processes and their network connections, then
+check logs for any logins, account creation, privilege escalation
+and scheduled tasks. Then, I would examine the files found as evidence without running to find the type of attack.
+
+============================================================
+ END OF INVESTIGATION
+============================================================

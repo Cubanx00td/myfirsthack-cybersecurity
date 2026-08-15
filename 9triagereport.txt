@@ -1,0 +1,78 @@
+============================================================
+ VULNERABILITY TRIAGE REPORT
+============================================================
+
+Analyst:   Rubanpreet Singh	
+Date:      06-08-2026
+Scope:     Triage of 7 scan findings for enterprise network
+Method:    Risk-based prioritisation (severity weighed by
+           exposure, value, active exploitation, patchability)
+
+
+------------------------------------------------------------
+ 1. SUMMARY
+------------------------------------------------------------
+
+Seven findings triaged by real risk. Top priority is the actively-exploited, internet-facing web vulnerability. The main focus is
+to consider other factors than CVSS rating to get actual risk 
+posed by different vulnerabilities.
+
+
+------------------------------------------------------------
+ 2. FINDINGS AND REAL-RISK ASSESSMENT
+------------------------------------------------------------
+
+  # | Severity | Real Risk | Key factors
+ ---+----------+-----------+----------------------------------
+  1 | CRITICAL | H         | publicly exposed, patchable, actively exploited
+  2 | HIGH     | L         | not exposed, patch available, not exploited
+  3 | CRITICAL | L         | not exposed, not patchable, not exploited
+  4 | MEDIUM   | L         | not exposed, patchable, no exploit
+  5 | HIGH     | M         | not publicly exposed, patchable, no exploit
+  6 | CRITICAL | H         | not exposed, patch Unavailable, not exploited, controls possible
+
+  7 | LOW      | H         | publicly exposed, patchable, no exploit
+ 
+ 
+
+------------------------------------------------------------
+ 3. PRIORITISED FIX-FIRST ORDER
+------------------------------------------------------------
+
+  1st  -  Finding 1  -  actively exploited
+  2nd  -  Finding 7  -  info disclosed, public
+  3rd  -  Finding 5  -  financial files, patchable
+  4th  -  Finding 2  -  customer data, patchable
+  5th  -  Finding 6  -  not patchable, internet facing, controls needed
+  6th  -  Finding 4  -  patchable
+  ...
+  Drop -  Finding 3  -  not run
+
+------------------------------------------------------------
+ 4. TRADE-OFFS AND DEFERRED RISK
+------------------------------------------------------------
+
+ Consciously deferred:
+ Finding 3 is deferred because the software is not being used
+
+ Compensating controls (for what can't be patched now):
+ isolate the legacy system on a separate segment,
+ add monitoring, restrict access
+
+ Would re-prioritise if:
+ a deferred vulnerability becomes actively exploited.
+ 
+
+------------------------------------------------------------
+ 5. REASONING APPROACH
+------------------------------------------------------------
+
+ While prioritising, the vulnerabilities with active exploits 
+ need to be fixed first to prevent further damage. Next, the 
+ risk of data breach can be avoided by patching the issues that
+ are public facing. Others can be prioritised based on available 
+ patches and the data at risk.
+
+============================================================
+ END OF TRIAGE REPORT
+============================================================

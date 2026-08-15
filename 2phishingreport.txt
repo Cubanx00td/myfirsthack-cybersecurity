@@ -1,0 +1,117 @@
+============================================================
+ PHISHING EMAIL ANALYSIS REPORT
+============================================================
+
+Analyst:        Rubanpreet Singh 
+Analysis Date:  26 May 2026
+Engagement:     Suspected Phishing Email Triage
+Methodology:    Headers > Sender > Content > Links > Verdict
+
+
+------------------------------------------------------------
+ 1. EMAIL METADATA
+------------------------------------------------------------
+
+Subject:        Your Expedia account has been suspended
+From (display): Expedia Security Team
+From (actual):  security-noreply@expedia-verify.com
+Reply-To:       security-noreply@expedia-verify.com
+Date received:  22 May 2026 03:42
+Recipient:      ruban.gill@gmail.com
+
+
+------------------------------------------------------------
+ 2. EXECUTIVE SUMMARY
+------------------------------------------------------------
+
+ Email confirmed as phishing. Sender domain
+ exped1a-verify.com is a typosquat of expedia.com,
+ registered 6 days ago via a registrar commonly abused
+ for phishing campaigns. The embedded link redirects to
+ a credential-harvesting page styled as the Expedia
+ login screen. No legitimate Expedia communication
+ originates from this domain.
+
+
+------------------------------------------------------------
+ 3. HEADER ANALYSIS
+------------------------------------------------------------
+
+SPF:            FAIL — sender IP not authorised for the claimed domain
+DKIM:           NONE — no signature present
+DMARC:          FAIL — alignment failed
+
+Originating IP: 185.243.214.97
+IP Geolocation: Russia / Moscow
+Reverse DNS:    no reverse record found
+
+
+------------------------------------------------------------
+ 4. SENDER DOMAIN ANALYSIS
+------------------------------------------------------------
+
+Domain:           expedia-verify.com
+Registered on:    20 May 2026 (6 days before email sent)
+Registrar:        NameSilo
+Privacy enabled:  Yes
+Domain age:       6 days
+Lookalike of:     expedia.com 
+
+
+------------------------------------------------------------
+ 5. CONTENT INDICATORS
+------------------------------------------------------------
+
+  [x] Urgency: "Your account will be suspended in 24 hours"
+  [x] Generic greeting: "Dear Customer"
+  [x] Spelling/grammar errors: "verifiy"
+  [x] Mismatched branding: logo is low-resolution
+  [x] Authority impersonation: claims to be Expedia
+  [X] Threat: "legal action will be taken"
+  [X] Reward bait: "you have won..."
+
+
+------------------------------------------------------------
+ 6. LINK ANALYSIS
+------------------------------------------------------------
+
+Visible link text:  "Click here to verify your account"
+Actual URL:         https://expedia-account-verify.cf/login
+Destination domain: ms-account-verify.cf
+URL shortener:      No
+HTTPS:              Yes — but free Let's Encrypt cert
+                    issued 3 days ago
+Landing page:       Expedia login page clone
+
+
+------------------------------------------------------------
+ 7. VERDICT
+------------------------------------------------------------
+
+Classification:   PHISHING
+Confidence:       HIGH
+Severity:         HIGH
+
+Reasoning: typosquatted domain, recent registration,
+failed authentication, credential-harvesting landing page.
+
+
+------------------------------------------------------------
+ 8. RECOMMENDED ACTIONS
+------------------------------------------------------------
+
+If you received this email:
+  [x] Do not click any links
+  [x] Report to your email provider (mark as phishing)
+  [x] Forward to phishing@expedia.com if impersonating
+
+If you clicked the link:
+  [ ] Change password on the real Microsoft account
+  [ ] Enable 2FA if not already on
+  [ ] Check account for unauthorised sessions
+  [ ] Scan device for malware
+
+
+============================================================
+ END OF REPORT
+============================================================

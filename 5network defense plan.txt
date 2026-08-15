@@ -1,0 +1,98 @@
+============================================================
+ NETWORK DEFENSE PLAN
+============================================================
+
+Prepared by:    Rubanpreet Singh
+Date:           03-07-2026
+Client:         Maya's Clothing Shop (small retail business)
+Engagement:     Network Security Assessment and Remediation Plan
+
+------------------------------------------------------------
+ 1. ASSESSMENT SUMMARY
+------------------------------------------------------------
+
+Maya's network is a flat network with all the devices sharing the
+same network. The tills, security cameras, personal devices, 
+customer devices and the back office laptop all use the same 
+Wi-Fi. The network needs segmentation and application of basic
+security procedures to improve the security of the network.
+
+------------------------------------------------------------
+ 2. NETWORK INVENTORY
+------------------------------------------------------------
+
+Device / system          Category          Holds / does
+Payment till x2    	 Payment           Card transactions
+Security cameras x4 	 IoT               Never updated
+Back-office laptop  	 Data              Customer records
+Maya's laptop       	 Personal          Business + home use
+Staff phones x2     	 Staff             Connect to shop Wi-Fi
+Smart speaker      	 IoT               Brought in
+Network printer    	 Infrastructure    Shared
+Customer Wi-Fi     	 Guest             Shares main network
+ISP router         	 Infrastructure    Default admin password
+
+------------------------------------------------------------
+ 3. PRIORITISED RISKS
+------------------------------------------------------------
+
+CRITICAL
+Flat network: any compromised device reaches the payment tills and customer data. No barriers to lateral movement.
+Customer Wi-Fi shares the network with payment systems (also a PCI DSS compliance failure.
+Default router admin credentials — trivial takeover.
+
+HIGH
+Weak shared Wi-Fi password, unchanged 3 years, written publicly — crackable and exposed.
+No monitoring or logs — an attack would go unnoticed and couldn't be investigated.
+
+MEDIUM
+Four never-updated IoT cameras — vulnerable and unsegmented (echoes the Mirai botnet).
+Shared back-office laptop with customer data — no access control / least privilege.
+
+LOW
+Unmanaged smart speaker on the network.
+
+
+------------------------------------------------------------
+ 4. RECOMMENDED FIXES
+------------------------------------------------------------
+
+  - SEGMENT the network: separate networks for (a) payment
+    systems, (b) customer Wi-Fi, (c) IoT/cameras, (d) staff and
+    office. Most modern routers support guest + IoT networks.
+  - CHANGE the router admin password from the default to a
+    strong unique one; update router firmware.
+  - Set Wi-Fi to WPA3 (or WPA2 minimum) with a long unique
+    password, NOT shared with customers or written in public.
+  - Enable basic logging; consider an affordable managed
+    security/monitoring service as the business grows.
+  - Restrict the back-office laptop / customer data to
+    only the people who need it (least privilege).
+
+------------------------------------------------------------
+ 5. PHASED ACTION PLAN
+------------------------------------------------------------
+
+DO FIRST (critical, highest leverage):
+Change default router credentials
+Segment payment systems and customer Wi-Fi apart
+
+THIS WEEK:
+New strong Wi-Fi password, WPA3 if supported
+Separate IoT cameras onto their own segment
+
+THIS MONTH:
+Set up logging / managed monitoring
+Tidy access control on the back-office data
+Review the smart speaker and any other extras
+
+------------------------------------------------------------
+ 6. HOW MAYA WILL KNOW IT WORKED
+------------------------------------------------------------
+
+Customers can only access the guest network, back office laptop 
+is only accessible to Maya and people she authorizes, logging is active.
+
+============================================================
+ END OF PLAN
+============================================================
