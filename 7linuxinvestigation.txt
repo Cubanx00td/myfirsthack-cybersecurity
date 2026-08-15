@@ -30,13 +30,15 @@ NETWORK CONNECTIONS (what it's talking to):
 nothing suspicious
 
 LOGS (the history / timeline):
-auth log findings: no new account creation, a new suspicious login using ssh
+auth log findings: no new account creation, a new suspicious 
+login using ssh
 
 ACCOUNTS (who exists / who can sudo):
 no suspicious accounts, only user's account can sudo
 
 SCHEDULED TASKS (persistence):
-a new cron job found that was recently created to run the update.sh file in /tmp folder establishing a remote connection 
+a new cron job found that was recently created to run the 
+update.sh file in /tmp folder establishing a remote connection 
 to a server in USA. 
 
 FILES (suspicious files):
@@ -84,7 +86,8 @@ Persistence:  cron
 
   Remove the dropped file and any persistence found
   Find and remove ALL persistence (miss one, they return)
-  Apply hardening (Day 64) to prevent recurrence: updates, least privilege, SSH keys, monitoring
+  Apply hardening (Day 64) to prevent recurrence: updates,
+  least privilege, SSH keys, monitoring
   Preserve evidence; escalate per incident process
 
 
@@ -92,10 +95,11 @@ Persistence:  cron
  7. SCOPE AND LIMITATIONS
 ------------------------------------------------------------
 
-  this was a staged practice scenario. In a real investigation,
+This was a staged practice scenario. In a real investigation,
 I would examine the processes and their network connections, then
 check logs for any logins, account creation, privilege escalation
-and scheduled tasks. Then, I would examine the files found as evidence without running to find the type of attack.
+and scheduled tasks. Then, I would examine the files found as 
+evidence without running to find the type of attack.
 
 ============================================================
  END OF INVESTIGATION
